@@ -117,7 +117,12 @@ RUN pip install --upgrade --force-reinstall requests
 
 # Install known working Python packages
 RUN pip install \
-        --no-cache-dir \
+        --no-cache-dir --ignore-installed \
+        --constraint  /opt/stack/requirements/upper-constraints.txt \
+        --requirement /opt/stack/requirements/global-requirements.txt
+
+RUN pip install \
+        --no-cache-dir --ignore-installed \
         --constraint  /opt/stack/requirements/upper-constraints.txt \
         --requirement /opt/stack/requirements/global-requirements.txt \
         --requirement /opt/stack/requirements/test-requirements.txt
