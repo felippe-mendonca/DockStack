@@ -124,7 +124,6 @@ RUN pip install \
 RUN pip install \
         --no-cache-dir --ignore-installed \
         --constraint  /opt/stack/requirements/upper-constraints.txt \
-        --requirement /opt/stack/requirements/global-requirements.txt \
         --requirement /opt/stack/requirements/test-requirements.txt
 
 # Setup non-Root user "stack", as required by stack.sh
